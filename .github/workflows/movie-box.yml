@@ -1,0 +1,19 @@
+name: movie-box
+on:
+  schedule:
+    - cron: '0 * * * *'
+  push:
+    branches: master
+jobs:
+  musicbox:
+   runs-on: ubuntu-latest
+   steps:
+     - uses: actions/checkout@v2
+     - run: npm install
+     - name: Update
+       uses: ./
+       env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GIST_ID: ${{ secrets.GIST_ID }}
+          TRAKT_ID: ${{ secrets.TRAKT_ID }}
+          TRAKT_USERNAME: ${{ secrets.TRAKT_USERNAME }}

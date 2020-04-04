@@ -1,0 +1,11 @@
+name: movie-box
+author: Luis Alejandro Martínez Faneyth
+description: GitHub Action for injecting last week's listening report from last.fm into a gist
+
+runs:
+  using: node13
+  main: ./index.js
+
+branding:
+  icon: music
+  color: red
