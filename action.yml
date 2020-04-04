@@ -7,5 +7,5 @@ runs:
   main: ./index.js
 
 branding:
-  icon: music
+  icon: film
   color: red

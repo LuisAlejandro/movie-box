@@ -72,8 +72,8 @@ async function main() {
       gist_id: gistId,
       files: {
         [filename]: {
-          filename: `🎵 My last movies`,
-          content: json
+          filename: `📺 My last movies`,
+          content: 'test'
         }
       }
     });
