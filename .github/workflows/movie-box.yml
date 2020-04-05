@@ -5,7 +5,7 @@ on:
   push:
     branches: master
 jobs:
-  musicbox:
+  moviebox:
    runs-on: ubuntu-latest
    steps:
      - uses: actions/checkout@v2
@@ -17,3 +17,4 @@ jobs:
           GIST_ID: ${{ secrets.GIST_ID }}
           TRAKT_ID: ${{ secrets.TRAKT_ID }}
           TRAKT_USERNAME: ${{ secrets.TRAKT_USERNAME }}
+          MOVIE_BOX_MODE: ${{ secrets.MOVIE_BOX_MODE }}
