@@ -5,7 +5,7 @@ on:
   push:
     branches: master
 jobs:
-  musicbox:
+  moviebox:
    runs-on: ubuntu-latest
    steps:
      - uses: actions/checkout@v2

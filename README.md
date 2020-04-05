@@ -25,8 +25,11 @@ This code was heavily inspired by [@jacc's music-box](https://github.com/jacc/mu
 - **GH_TOKEN:** The GitHub token generated above.
 - **TRAKT_ID:** The Client ID you got from creating a Trakt.tv app.
 - **TRAKT_USERNAME:** Your Last.fm username.
+- **MOVIE_BOX_MODE:** Select the box mode from three options.
+
+  * `movies`: This
 
 ## 🕵🏾 Hacking suggestions
 
-- You can set up CI on Travis if you want to modify this Github Action. You just have to configure the evironment secrets as environment variables on travis. A build will be triggered on every push for the `develop` branch.
-- You can also test the script locally with Lando and Docker.
+  - You can set up CI on Travis if you want to modify this Github Action. You just have to configure the environment secrets as environment variables on travis. A build will be triggered on every push for the `develop` branch. Careful, your gist will be updated.
+  - You can also test the script locally with Lando and Docker.

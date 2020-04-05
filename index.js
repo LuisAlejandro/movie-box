@@ -7,25 +7,25 @@ const {
   GH_TOKEN: githubToken,
   GIST_ID: gistId,
   TRAKT_ID: traktId,
-  TRAKT_USERNAME: traktUser
+  TRAKT_USERNAME: traktUser,
+  MOVIE_BOX_MODE: moviBoxMode
 } = process.env
 
 const octokit = new Octokit({
   auth: `token ${githubToken}`
 });
 
-const API_BASE = 'https://api.trakt.tv/users/luisalejandro/watched/movies';
+const API_BASE = 'https://api.trakt.tv/users/luisalejandro/history/movies';
 
 async function main() {
-
-  if (!traktId || !traktUser || !gistId || !githubToken)
+  if (!traktId || !traktUser || !gistId || !githubToken || !moviBoxMode)
     throw new Error('Please check your environment variables, as you are missing one.')
 
   const data = await fetch(API_BASE, {
     headers: {
       'Content-Type': 'application/json',
       'trakt-api-key': traktId,
-      'Content-Type': '2',
+      'trakt-api-version': '2',
     }
   });
   const json = await data.json();
@@ -65,6 +65,20 @@ async function main() {
   //   ].join(' '));
   // }
 
+
+  const lines = [];
+  for(let i = 0; i < 5; i++) {
+    let title = json[i].movie.title;
+    let watched = json[i].movie.title;
+    title = title.padEnd(36 + title.length - eaw.length(name));
+    lines.push([
+      '',
+      title,
+
+    ].join(' '));
+  }
+
+
   try {
     // Get original filename to update that same file
     const filename = Object.keys(gist.data.files)[0];
@@ -72,8 +86,8 @@ async function main() {
       gist_id: gistId,
       files: {
         [filename]: {
-          filename: `📺 My last movies`,
-          content: 'test'
+          filename: `📺 My last watched movies`,
+          content: lines.join("\n")
         }
       }
     });
