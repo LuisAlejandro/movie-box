@@ -20,5 +20,6 @@ script:
     - echo "GIST_ID=${GIST_ID}" >> .env
     - echo "TRAKT_ID=${TRAKT_ID}" >> .env
     - echo "TRAKT_USERNAME=${TRAKT_USERNAME}" >> .env
+    - echo "MOVIE_BOX_MODE=${MOVIE_BOX_MODE}" >> .env
     - lando start
     - lando yarn run update
