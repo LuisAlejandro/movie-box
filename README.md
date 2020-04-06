@@ -20,7 +20,7 @@ This code was heavily inspired by [@jacc's music-box](https://github.com/jacc/mu
 1. Fork this repo.
 2. Go to your fork's `Settings` > `Secrets` > `Add a new secret` for each environment secret (below).
 3. Activate github workflows on `Actions` > `I understand my workflows, go ahead and run them`.
-4. The workflow will run every hour to update your gist info, if you dont want to wait an hour, you can star your repository fork and this will trigger a workflow build. You can then go to your profile and pin the gist.
+4. Star your own fork to trigger the initial build. Then the gist will update hourly. You can then go to your profile and pin the gist.
 
 ## 🤫 Environment Secrets
 - **GIST_ID:** The ID portion from your gist url `https://gist.github.com/<github username>/`**`<gist ID>`**.
