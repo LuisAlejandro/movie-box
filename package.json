@@ -1,6 +1,6 @@
 {
   "name": "movie-box",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Update a gist to contain your recently watched movies from trakt.tv.",
   "author": "Luis Alejandro Martínez Faneyth <luis@luisalejandro.org>",
   "license": "GPL-3.0-or-later",
@@ -17,8 +17,8 @@
     "update": "node index.js"
   },
   "dependencies": {
-    "@octokit/rest": "16.32.0",
-    "dotenv": "8.1.0",
+    "@octokit/rest": "17.1.4",
+    "dotenv": "8.2.0",
     "eastasianwidth": "0.2.0",
     "gist-box": "0.3.0",
     "octokit": "1.0.0-hello-world"
