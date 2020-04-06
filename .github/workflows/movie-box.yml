@@ -1,9 +1,11 @@
 name: movie-box
 on:
-  schedule:
-    - cron: '0 * * * *'
   push:
     branches: master
+  schedule:
+    - cron: '0 * * * *'
+  watch:
+    types: [started]
 jobs:
   moviebox:
    runs-on: ubuntu-latest

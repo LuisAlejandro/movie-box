@@ -11,14 +11,16 @@
 This code was heavily inspired by [@jacc's music-box](https://github.com/jacc/music-box).
 
 ## 🎒 Prep Work
-1. Create a new public GitHub Gist (https://gist.github.com/)
-1. Create a token with the `gist` scope and copy it. (https://github.com/settings/tokens/new)
-1. Create a Trakt.tv Application (https://trakt.tv/oauth/applications/new)
-1. Copy the `API token`
+1. Create a new public GitHub Gist (https://gist.github.com/).
+2. Create a token with the `gist` scope and copy it. (https://github.com/settings/tokens/new).
+3. Create a Trakt.tv Application (https://trakt.tv/oauth/applications/new).
+4. Copy the `API token`.
 
 ## 🖥 Project Setup
-1. Fork this repo
-2. Go to your fork's `Settings` > `Secrets` > `Add a new secret` for each environment secret (below)
+1. Fork this repo.
+2. Go to your fork's `Settings` > `Secrets` > `Add a new secret` for each environment secret (below).
+3. Activate github workflows on `Actions` > `I understand my workflows, go ahead and run them`.
+4. The workflow will run every hour to update your gist info, if you dont want to wait an hour, you can star your repository fork and this will trigger a workflow build. You can then go to your profile and pin the gist.
 
 ## 🤫 Environment Secrets
 - **GIST_ID:** The ID portion from your gist url `https://gist.github.com/<github username>/`**`<gist ID>`**.
@@ -29,7 +31,7 @@ This code was heavily inspired by [@jacc's music-box](https://github.com/jacc/mu
 
 ## 🕵🏾 Hacking suggestions
 
-- You can set up CI on Travis if you want to modify this Github Action. You just have to configure the environment secrets as environment variables on travis. A build will be triggered on every push for the `develop` branch. Careful, your gist WILL be updated.
+- You can set up CI on Travis if you want to modify this Github Action. You just have to configure the environment secrets as environment variables on Travis. A build will be triggered on every push for the `develop` branch. Careful, your gist WILL be updated.
 - You can also test the script locally with Lando and Docker:
 
   * Install [Docker Community Edition](https://docs.docker.com/install/#supported-platforms) according with your operating system
@@ -45,6 +47,14 @@ This code was heavily inspired by [@jacc's music-box](https://github.com/jacc/mu
   * Change to the `develop` branch.
 
           git branch develop
+
+  * Create a `.env` file with the content of the environment secrets as variables, like this (with real values):
+
+          GIST_ID=xxxx
+          GH_TOKEN=xxxx
+          TRAKT_ID=xxxx
+          TRAKT_USERNAME=xxxx
+          MOVIE_BOX_MODE=xxxx
 
   * Execute the following command to create the docker image (first time only):
 
