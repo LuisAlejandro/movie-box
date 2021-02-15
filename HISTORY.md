@@ -1,6 +1,71 @@
 # Changelog
 
 
+## 0.1.3 (2021-02-15)
+
+### Changes
+
+* Migrating from Travis + Lando to Github Actions + Docker Compose. [Luis Alejandro Martínez Faneyth]
+
+### Other
+
+* Create Dependabot config file. [dependabot-preview[bot]]
+
+* Bump @octokit/rest from 18.0.9 to 18.0.12. [dependabot-preview[bot]]
+
+  Bumps [@octokit/rest](https://github.com/octokit/rest.js) from 18.0.9 to 18.0.12.
+  - [Release notes](https://github.com/octokit/rest.js/releases)
+  - [Commits](https://github.com/octokit/rest.js/compare/v18.0.9...v18.0.12)
+
+* Bump @octokit/rest from 18.0.6 to 18.0.9. [dependabot-preview[bot]]
+
+  Bumps [@octokit/rest](https://github.com/octokit/rest.js) from 18.0.6 to 18.0.9.
+  - [Release notes](https://github.com/octokit/rest.js/releases)
+  - [Commits](https://github.com/octokit/rest.js/compare/v18.0.6...v18.0.9)
+
+* Bump @octokit/rest from 18.0.3 to 18.0.6. [dependabot-preview[bot]]
+
+  Bumps [@octokit/rest](https://github.com/octokit/rest.js) from 18.0.3 to 18.0.6.
+  - [Release notes](https://github.com/octokit/rest.js/releases)
+  - [Commits](https://github.com/octokit/rest.js/compare/v18.0.3...v18.0.6)
+
+* Bump @octokit/rest from 17.6.0 to 18.0.3. [dependabot-preview[bot]]
+
+  Bumps [@octokit/rest](https://github.com/octokit/rest.js) from 17.6.0 to 18.0.3.
+  - [Release notes](https://github.com/octokit/rest.js/releases)
+  - [Commits](https://github.com/octokit/rest.js/compare/v17.6.0...v18.0.3)
+
+* Bump @octokit/rest from 17.5.1 to 17.6.0. [dependabot-preview[bot]]
+
+  Bumps [@octokit/rest](https://github.com/octokit/rest.js) from 17.5.1 to 17.6.0.
+  - [Release notes](https://github.com/octokit/rest.js/releases)
+  - [Commits](https://github.com/octokit/rest.js/compare/v17.5.1...v17.6.0)
+
+* Bump @octokit/rest from 17.2.1 to 17.5.1. [dependabot-preview[bot]]
+
+  Bumps [@octokit/rest](https://github.com/octokit/rest.js) from 17.2.1 to 17.5.1.
+  - [Release notes](https://github.com/octokit/rest.js/releases)
+  - [Commits](https://github.com/octokit/rest.js/compare/v17.2.1...v17.5.1)
+
+* Bump @octokit/rest from 17.2.0 to 17.2.1. [dependabot-preview[bot]]
+
+  Bumps [@octokit/rest](https://github.com/octokit/rest.js) from 17.2.0 to 17.2.1.
+  - [Release notes](https://github.com/octokit/rest.js/releases)
+  - [Commits](https://github.com/octokit/rest.js/compare/v17.2.0...v17.2.1)
+
+* Bump @octokit/rest from 17.1.4 to 17.2.0. [dependabot-preview[bot]]
+
+  Bumps [@octokit/rest](https://github.com/octokit/rest.js) from 17.1.4 to 17.2.0.
+  - [Release notes](https://github.com/octokit/rest.js/releases)
+  - [Commits](https://github.com/octokit/rest.js/compare/v17.1.4...v17.2.0)
+
+* Bump gist-box from 0.3.0 to 0.3.1. [dependabot-preview[bot]]
+
+  Bumps [gist-box](https://github.com/JasonEtco/gist-box) from 0.3.0 to 0.3.1.
+  - [Release notes](https://github.com/JasonEtco/gist-box/releases)
+  - [Commits](https://github.com/JasonEtco/gist-box/compare/v0.3.0...v0.3.1)
+
+
 ## 0.1.2 (2020-04-06)
 
 ### Changes
