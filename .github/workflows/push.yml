@@ -42,7 +42,9 @@ jobs:
           echo "TRAKT_ID=${TRAKT_ID}" >> .env
           echo "TRAKT_USERNAME=${TRAKT_USERNAME}" >> .env
           echo "MOVIE_BOX_MODE=${MOVIE_BOX_MODE}" >> .env
+          sudo chown -R 1000:1000 .
           make image dependencies update
+          sudo chown -R runner:docker .
       - name: Pushing docker image
         run: |
           GITHUB_REPOSITORY=$(echo $GITHUB_REPOSITORY | tr '[A-Z]' '[a-z]')

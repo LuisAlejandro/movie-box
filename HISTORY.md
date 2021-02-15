@@ -1,6 +1,13 @@
 # Changelog
 
 
+## 0.1.4 (2021-02-15)
+
+### Fix
+
+* Fixing pull request and code quality workflows. [Luis Alejandro Martínez Faneyth]
+
+
 ## 0.1.3 (2021-02-15)
 
 ### Changes

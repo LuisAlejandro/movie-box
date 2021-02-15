@@ -1,4 +1,4 @@
-FROM dockershelf/node:14
+FROM dockershelf/node:12
 LABEL maintainer "Luis Alejandro Martínez Faneyth <luis@luisalejandro.org>"
 
 RUN apt-get update && \
@@ -12,3 +12,11 @@ RUN apt-get update && \
 
 RUN useradd -ms /bin/bash moviebox
 RUN echo "moviebox ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/moviebox
+
+USER moviebox
+
+RUN mkdir -p /home/moviebox/app
+
+WORKDIR /home/moviebox/app
+
+CMD tail -f /dev/null

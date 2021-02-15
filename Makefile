@@ -12,8 +12,6 @@ start:
 
 dependencies: start
 	@docker-compose -p moviebox -f docker-compose.yml exec \
-		-T --user moviebox moviebox bundle install --path=vendor/bundle
-	@docker-compose -p moviebox -f docker-compose.yml exec \
 		-T --user moviebox moviebox yarn install
 
 update: start

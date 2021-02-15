@@ -34,11 +34,20 @@ jobs:
           GITHUB_REPOSITORY=$(echo $GITHUB_REPOSITORY | tr '[A-Z]' '[a-z]')
           docker build . -t luisalejandro/movie-box:latest --cache-from=docker.pkg.github.com/$GITHUB_REPOSITORY/moviebox-build-cache
       - name: Building project
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GIST_ID: ${{ secrets.GIST_ID }}
+          TRAKT_ID: ${{ secrets.TRAKT_ID }}
+          TRAKT_USERNAME: ${{ secrets.TRAKT_USERNAME }}
+          MOVIE_BOX_MODE: ${{ secrets.MOVIE_BOX_MODE }}
         run: |
+          echo "GH_TOKEN=${GH_TOKEN}" > .env
+          echo "GIST_ID=${GIST_ID}" >> .env
+          echo "TRAKT_ID=${TRAKT_ID}" >> .env
+          echo "TRAKT_USERNAME=${TRAKT_USERNAME}" >> .env
+          echo "MOVIE_BOX_MODE=${MOVIE_BOX_MODE}" >> .env
           sudo chown -R 1000:1000 .
-          make start
-          make dependencies
-          make build_production
+          make image dependencies update
           sudo chown -R runner:docker .
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v1
