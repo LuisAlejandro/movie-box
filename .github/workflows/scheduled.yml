@@ -1,20 +1,23 @@
-name: movie-box
+name: Update movie-box gist
+
 on:
-  push:
-    branches: master
   schedule:
     - cron: '0 * * * *'
   watch:
     types: [started]
+  
 jobs:
-  moviebox:
-   runs-on: ubuntu-latest
-   steps:
-     - uses: actions/checkout@v2
-     - run: npm install
-     - name: Update
-       uses: ./
-       env:
+  build:
+    name: Updating movie-box gist
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: master
+      - run: npm install
+      - name: Update
+        uses: ./
+        env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           GIST_ID: ${{ secrets.GIST_ID }}
           TRAKT_ID: ${{ secrets.TRAKT_ID }}

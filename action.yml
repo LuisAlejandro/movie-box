@@ -3,7 +3,7 @@ author: Luis Alejandro Martínez Faneyth
 description: GitHub Action for injecting last week's listening report from last.fm into a gist
 
 runs:
-  using: node12
+  using: node14
   main: ./index.js
 
 branding:

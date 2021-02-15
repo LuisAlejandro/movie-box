@@ -1,0 +1,93 @@
+name: Pull Request
+
+on:
+  pull_request:
+    types:
+      - opened
+      - ready_for_review
+      - synchronize
+      - reopened
+    branches:
+      - develop
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-20.04
+    if: github.repository == 'LuisAlejandro/movie-box'
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+      - name: Restoring node_modules cache
+        uses: actions/cache@v2
+        with:
+          path: 'node_modules'
+          key: ${{ runner.os }}-node-modules-${{ hashFiles('yarn.lock') }}
+      - name: Login to Github Docker Registry
+        run: echo ${{ secrets.GITHUB_TOKEN }} | docker login docker.pkg.github.com -u $GITHUB_ACTOR --password-stdin
+      - name: Pulling docker cache
+        run: |
+          GITHUB_REPOSITORY=$(echo $GITHUB_REPOSITORY | tr '[A-Z]' '[a-z]')
+          docker pull docker.pkg.github.com/$GITHUB_REPOSITORY/moviebox-build-cache || true
+      - name: Building image with cache
+        run: |
+          GITHUB_REPOSITORY=$(echo $GITHUB_REPOSITORY | tr '[A-Z]' '[a-z]')
+          docker build . -t luisalejandro/movie-box:latest --cache-from=docker.pkg.github.com/$GITHUB_REPOSITORY/moviebox-build-cache
+      - name: Building project
+        run: |
+          sudo chown -R 1000:1000 .
+          make start
+          make dependencies
+          make build_production
+          sudo chown -R runner:docker .
+      - name: Pushing docker image
+        run: |
+          GITHUB_REPOSITORY=$(echo $GITHUB_REPOSITORY | tr '[A-Z]' '[a-z]')
+          docker tag luisalejandro/movie-box:latest docker.pkg.github.com/$GITHUB_REPOSITORY/moviebox-build-cache
+          docker push docker.pkg.github.com/$GITHUB_REPOSITORY/moviebox-build-cache || true
+
+  approve:
+    name: Approve pull request
+    runs-on: ubuntu-20.04
+    if: github.repository == 'LuisAlejandro/movie-box'
+    needs: build
+    steps:
+      - name: Approve
+        uses: hmarr/auto-approve-action@v2.0.0
+        if: github.actor == 'dependabot[bot]' || github.actor == 'dependabot-preview[bot]'
+        with:
+          github-token: "${{ secrets.PERSONAL_ACCESS_TOKEN }}"
+      - name: Approve
+        uses: hmarr/auto-approve-action@v2.0.0
+        if: github.actor == 'LuisAlejandro'
+        with:
+          github-token: "${{ secrets.GITHUB_TOKEN }}"
+
+  merge:
+    name: Merge pull request
+    runs-on: ubuntu-20.04
+    if: github.repository == 'LuisAlejandro/movie-box'
+    needs: approve
+    steps:
+      - name: Merge
+        uses: actions/github-script@v3
+        if: github.actor == 'dependabot[bot]' || github.actor == 'dependabot-preview[bot]'
+        with:
+          github-token: "${{ secrets.PERSONAL_ACCESS_TOKEN }}"
+          script: |
+            await github.pulls.merge({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: context.payload.pull_request.number
+            })
+      - name: Merge
+        uses: actions/github-script@v3
+        if: github.actor == 'LuisAlejandro'
+        with:
+          github-token: "${{ secrets.GITHUB_TOKEN }}"
+          script: |
+            await github.pulls.merge({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: context.payload.pull_request.number
+            })
