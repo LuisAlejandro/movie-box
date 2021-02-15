@@ -11,18 +11,22 @@
 This code was heavily inspired by [@jacc's music-box](https://github.com/jacc/music-box).
 
 ## 🎒 Prep Work
+
 1. Create a new public GitHub Gist (https://gist.github.com/).
 2. Create a token with the `gist` scope and copy it. (https://github.com/settings/tokens/new).
-3. Create a Trakt.tv Application (https://trakt.tv/oauth/applications/new).
-4. Copy the `API token`.
+3. Create a Trakt.tv Application and copy the `API token` (https://trakt.tv/oauth/applications/new).
 
 ## 🖥 Project Setup
+
 1. Fork this repo.
 2. Go to your fork's `Settings` > `Secrets` > `Add a new secret` for each environment secret (below).
 3. Activate github workflows on `Actions` > `I understand my workflows, go ahead and run them`.
 4. Star your own fork to trigger the initial build. Then the gist will update hourly. You can then go to your profile and pin the gist.
 
 ## 🤫 Environment Secrets
+
+Set the following environment secrets on `github.com/<github username>/movie-box` > `Settings` > `Secrets`:
+
 - **GIST_ID:** The ID portion from your gist url `https://gist.github.com/<github username>/`**`<gist ID>`**.
 - **GH_TOKEN:** The GitHub token generated above.
 - **TRAKT_ID:** The Client ID you got from creating a Trakt.tv app.
@@ -31,18 +35,17 @@ This code was heavily inspired by [@jacc's music-box](https://github.com/jacc/mu
 
 ## 🕵🏾 Hacking suggestions
 
-- You can set up CI on Travis if you want to modify this Github Action. You just have to configure the environment secrets as environment variables on Travis. A build will be triggered on every push for the `develop` branch. Careful, your gist WILL be updated.
-- You can also test the script locally with Lando and Docker:
+- You can test the script locally with Docker Compose:
 
   * Install [Docker Community Edition](https://docs.docker.com/install/#supported-platforms) according with your operating system
-  * Install [Lando](https://docs.devwithlando.io/installation/system-requirements.html) according with your operating system.
+  * Install [Docker Compose](https://docs.docker.com/compose/install/) according with your operating system.
 
-      - [Linux](https://docs.devwithlando.io/installation/linux.html)
-      - [Mac](https://docs.devwithlando.io/installation/macos.html)
-      - [Windows](https://docs.devwithlando.io/installation/windows.html)
+      - [Linux](https://docs.docker.com/compose/install/#install-compose-on-linux-systems)
+      - [Mac](https://docs.docker.com/compose/install/#install-compose-on-macos)
+      - [Windows](https://docs.docker.com/compose/install/#install-compose-on-windows-desktop-systems)
 
   * Install a git client.
-  * Clone your fork of the repository.
+  * Clone your fork of the repository into your local computer.
   * Open a terminal and navigate to the newly created folder.
   * Change to the `develop` branch.
 
@@ -60,10 +63,24 @@ This code was heavily inspired by [@jacc's music-box](https://github.com/jacc/mu
 
           make image
 
-  * Execute the following command to start the project:
+  * Execute the following command to install node dependencies:
 
-          make start
+          make dependencies
 
-  * Execute the following command to stop the project (you can also hit ctrl+C):
+  * You can execute the update script with this command:
 
+          make update
+
+  * Or, alternatively, open a console where you can manually execute the script and debug any errors:
+
+          make console
+          node index.js
+
+  * You can stop the docker container with:
+  
           make stop
+
+  * Or, destroy it completely:
+  
+          make destroy
+  

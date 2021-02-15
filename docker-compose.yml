@@ -1,0 +1,11 @@
+version: "3"
+services:
+  moviebox:
+    image: luisalejandro/movie-box:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/home/moviebox/app
+    env_file:
+      - .env
