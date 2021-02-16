@@ -1,6 +1,21 @@
 # Changelog
 
 
+## 0.1.5 (2021-02-16)
+
+### Changes
+
+* Adjusting cron to weekly basis. [Luis Alejandro Martínez Faneyth]
+
+### Other
+
+* Bump @octokit/rest from 18.0.12 to 18.1.1. [dependabot[bot]]
+
+  Bumps [@octokit/rest](https://github.com/octokit/rest.js) from 18.0.12 to 18.1.1.
+  - [Release notes](https://github.com/octokit/rest.js/releases)
+  - [Commits](https://github.com/octokit/rest.js/compare/v18.0.12...v18.1.1)
+
+
 ## 0.1.4 (2021-02-15)
 
 ### Fix
