@@ -21,6 +21,6 @@
     "dotenv": "8.2.0",
     "eastasianwidth": "0.2.0",
     "gist-box": "0.3.1",
-    "octokit": "1.0.0"
+    "octokit": "1.0.3"
   }
 }
