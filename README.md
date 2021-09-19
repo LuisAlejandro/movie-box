@@ -30,7 +30,7 @@ Set the following environment secrets on `github.com/<github username>/movie-box
 - **GIST_ID:** The ID portion from your gist url `https://gist.github.com/<github username>/`**`<gist ID>`**.
 - **GH_TOKEN:** The GitHub token generated above.
 - **TRAKT_ID:** The Client ID you got from creating a Trakt.tv app.
-- **TRAKT_USERNAME:** Your Last.fm username.
+- **TRAKT_USERNAME:** Your Trakt.tv username.
 - **MOVIE_BOX_MODE:** Select the box mode from three options: `movies`, `shows` and `stats`.
 
 ## 🕵🏾 Hacking suggestions
