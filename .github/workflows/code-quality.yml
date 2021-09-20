@@ -21,7 +21,7 @@ jobs:
         uses: actions/cache@v2
         with:
           path: 'node_modules'
-          key: ${{ runner.os }}-node-modules-${{ hashFiles('package-lock.json') }}
+          key: ${{ runner.os }}-node-modules-${{ hashFiles('yarn.lock') }}
       - name: Login to Github Docker Registry
         run: echo ${{ secrets.PERSONAL_ACCESS_TOKEN }} | docker login docker.pkg.github.com -u $GITHUB_ACTOR --password-stdin
       - name: Pulling docker cache
