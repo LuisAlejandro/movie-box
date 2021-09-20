@@ -1,6 +1,6 @@
 name: movie-box
 author: Luis Alejandro Martínez Faneyth
-description: GitHub Action for injecting last week's listening report from last.fm into a gist
+description: Update a gist to contain your recently watched movies from trakt.tv
 
 runs:
   using: node12
