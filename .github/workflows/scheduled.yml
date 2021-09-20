@@ -2,7 +2,7 @@ name: Update movie-box gist
 
 on:
   schedule:
-    - cron: '0 * * * *'
+    - cron: '1 0 * * *'
   watch:
     types: [started]
   
