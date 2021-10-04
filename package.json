@@ -17,7 +17,7 @@
     "update": "node index.js"
   },
   "dependencies": {
-    "@octokit/rest": "18.11.1",
+    "@octokit/rest": "18.11.4",
     "dotenv": "10.0.0",
     "eastasianwidth": "0.2.0",
     "gist-box": "0.3.1",
