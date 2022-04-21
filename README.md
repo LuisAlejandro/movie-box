@@ -1,6 +1,6 @@
 <p align='center'>
-  <img src="https://github.com/LuisAlejandro/movie-box/blob/master/branding/moviebox-preview.png">
-  <h3 align="center">movie-box</h3>
+  <img src="https://github.com/LuisAlejandro/movie-box/blob/develop/branding/moviebox-preview.png">
+  <h3 align="center">Movie Box</h3>
   <p align="center">Update a gist to contain your recently watched movies from trakt.tv</p>
 </p>
 
@@ -49,7 +49,7 @@ Set the following environment secrets on `github.com/<github username>/movie-box
   * Open a terminal and navigate to the newly created folder.
   * Change to the `develop` branch.
 
-          git branch develop
+          git checkout develop
 
   * Create a `.env` file with the content of the environment secrets as variables, like this (with real values):
 
@@ -84,3 +84,9 @@ Set the following environment secrets on `github.com/<github username>/movie-box
   
           make destroy
   
+
+## Made with :heart: and :hamburger:
+
+![Banner](https://github.com/LuisAlejandro/movie-box/blob/develop/branding/author-banner.svg)
+
+> Web [luisalejandro.org](http://luisalejandro.org/) · GitHub [@LuisAlejandro](https://github.com/LuisAlejandro) · Twitter [@LuisAlejandro](https://twitter.com/LuisAlejandro)

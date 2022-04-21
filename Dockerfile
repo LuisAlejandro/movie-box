@@ -1,8 +1,8 @@
 FROM dockershelf/node:14
-LABEL maintainer "Luis Alejandro Martínez Faneyth <luis@luisalejandro.org>"
+LABEL maintainer "Luis Alejandro Martínez Faneyth <luis@collagelabs.org>"
 
 RUN apt-get update && \
-    apt-get install gnupg sudo
+    apt-get install sudo gnupg
 
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
 RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
