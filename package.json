@@ -1,6 +1,6 @@
 {
   "name": "movie-box",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Update a gist to contain your recently watched movies from trakt.tv.",
   "author": "Luis Alejandro Martínez Faneyth <luis@luisalejandro.org>",
   "license": "GPL-3.0-or-later",
