@@ -3,8 +3,8 @@ author: Luis Alejandro Martínez Faneyth
 description: Update a gist to contain your recently watched movies from trakt.tv
 
 runs:
-  using: node12
-  main: ./index.js
+  using: node14
+  main: dist/index.js
 
 branding:
   icon: film

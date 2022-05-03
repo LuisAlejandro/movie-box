@@ -18,6 +18,10 @@ update: start
 	@docker-compose -p moviebox -f docker-compose.yml exec \
 		-T --user moviebox moviebox yarn run update
 
+dist: start
+	@docker-compose -p moviebox -f docker-compose.yml exec \
+		-T --user moviebox moviebox yarn run dist
+
 console: start
 	@docker-compose -p moviebox -f docker-compose.yml exec \
 		--user moviebox moviebox bash

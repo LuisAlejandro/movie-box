@@ -14,7 +14,8 @@
   "homepage": "https://github.com/LuisAlejandro/movie-box#readme",
   "main": "index.js",
   "scripts": {
-    "update": "node index.js"
+    "update": "node index.js",
+    "dist": "webpack"
   },
   "dependencies": {
     "@octokit/rest": "18.12.0",
@@ -22,5 +23,9 @@
     "eastasianwidth": "0.2.0",
     "gist-box": "0.3.1",
     "octokit": "1.7.1"
+  },
+  "devDependencies": {
+    "webpack": "^5.72.0",
+    "webpack-cli": "^4.9.2"
   }
 }
