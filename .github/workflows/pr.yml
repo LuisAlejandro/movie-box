@@ -49,7 +49,7 @@ jobs:
           echo "TRAKT_USERNAME=${TRAKT_USERNAME}" >> .env
           echo "MOVIE_BOX_MODE=${MOVIE_BOX_MODE}" >> .env
           sudo chown -R 1000:1000 .
-          make image dependencies update
+          make dependencies update
           sudo chown -R runner:docker .
       - name: Pushing docker image
         run: |
