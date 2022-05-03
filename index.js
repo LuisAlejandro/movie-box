@@ -1,6 +1,6 @@
 require('dotenv').config();
 const { Octokit } = require("@octokit/rest");
-const fetch = require("node-fetch");
+const axios = require("axios");
 const eaw = require('eastasianwidth');
 
 const {
@@ -73,32 +73,40 @@ async function main() {
   SHOWS_GNRE_API_END = `${API_URL}/users/${traktUser}/watched/shows?extended=full&limit=10000`;
 
   try {
-    mainData = await fetch(API_END, {
-      headers: {
+    mainData = await axios.request(API_END, {
+        method: "GET",
+        url: API_END,
+        headers: {
         'Content-Type': 'application/json',
         'trakt-api-key': traktId,
         'trakt-api-version': '2',
       }
     });
-    mainJson = await mainData.json();
+    mainJson = mainData.data
 
     if (movieBoxMode == 'stats') {
-      showsGnreData = await fetch(SHOWS_GNRE_API_END, {
+      showsGnreData = await axios.request(SHOWS_GNRE_API_END, {
+        method: "GET",
+        url: SHOWS_GNRE_API_END,
         headers: {
           'Content-Type': 'application/json',
           'trakt-api-key': traktId,
           'trakt-api-version': '2',
         }
       });
-      showsGnreJson = await showsGnreData.json();
-      moviesGnreData = await fetch(MOVIES_GNRE_API_END, {
+      showsGnreJson = showsGnreData.data
+
+      moviesGnreData = await axios.request(MOVIES_GNRE_API_END, {
+        method: "GET",
+        url: MOVIES_GNRE_API_END,
         headers: {
           'Content-Type': 'application/json',
           'trakt-api-key': traktId,
           'trakt-api-version': '2',
         }
       });
-      moviesGnreJson = await moviesGnreData.json();
+      moviesGnreJson = moviesGnreData.data
+
     }
   } catch (error) {
     console.error(`movie-box ran into an issue getting your Trakt.tv data:\n${error}`);
