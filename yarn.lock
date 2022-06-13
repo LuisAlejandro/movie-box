@@ -948,10 +948,10 @@ node-releases@^2.0.3:
   resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-2.0.4.tgz#f38252370c43854dc48aa431c766c6c398f40476"
   integrity sha512-gbMzqQtTtDz/00jQzZ21PQzdI9PyLYqUSvD0p3naOhX4odFji0ZxYdnVwPTxmSwkmxhcFImpozceidSG+AgoPQ==
 
-octokit@1.7.1:
-  version "1.7.1"
-  resolved "https://registry.yarnpkg.com/octokit/-/octokit-1.7.1.tgz#d86e51c8e0cec65cb64822ca2c9ff1b052593799"
-  integrity sha512-1b7eRgU8uWetHOWr8f9ptnVo2EKbrkOfocMeQdpgCt7tl/LK67HptFsy2Xg4fMjsJ/+onoBJW0hy/fO0In3/uA==
+octokit@1.7.2:
+  version "1.7.2"
+  resolved "https://registry.yarnpkg.com/octokit/-/octokit-1.7.2.tgz#c5f11699c39ba5526ff170cbfcb7eaa291ddf11a"
+  integrity sha512-C+iwOeUMWwbvHxGbLX5rAde5WuEVGe/hNQniU1haZAPMHqUz1+ppffvkP4v/2R3dkSLJnzceUG+ir0klNmEoBA==
   dependencies:
     "@octokit/app" "^12.0.4"
     "@octokit/core" "^3.5.1"
