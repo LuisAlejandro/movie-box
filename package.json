@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@octokit/rest": "19.0.7",
-    "axios": "^1.2.3",
+    "axios": "^1.2.6",
     "dotenv": "16.0.3",
     "eastasianwidth": "0.2.0",
     "gist-box": "0.3.1",
