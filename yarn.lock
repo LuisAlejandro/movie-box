@@ -1023,15 +1023,15 @@ node-releases@^2.0.3:
   resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-2.0.4.tgz#f38252370c43854dc48aa431c766c6c398f40476"
   integrity sha512-gbMzqQtTtDz/00jQzZ21PQzdI9PyLYqUSvD0p3naOhX4odFji0ZxYdnVwPTxmSwkmxhcFImpozceidSG+AgoPQ==
 
-octokit@2.0.13:
-  version "2.0.13"
-  resolved "https://registry.yarnpkg.com/octokit/-/octokit-2.0.13.tgz#86bd921b7d5db6dfcd70cccf4cc68e5ec94adc21"
-  integrity sha512-engPEQZ5FgTZz9Z99zH6LBZ1SzWjeWd6cqPWyeRSqCVYQqyfiFpDTwRQGVsZmpFNDcBRl85IiFdVx8TliqR1BQ==
+octokit@2.0.14:
+  version "2.0.14"
+  resolved "https://registry.yarnpkg.com/octokit/-/octokit-2.0.14.tgz#e2057097a6c9cac3e7724a4365b450b7c694a6a4"
+  integrity sha512-z6cgZBFxirpFEQ1La8Lg83GCs5hOV2EPpkYYdjsGNbfQMv8qUGjq294MiRBCbZqLufviakGsPUxaNKe3JrPmsA==
   dependencies:
     "@octokit/app" "^13.1.1"
     "@octokit/core" "^4.0.4"
     "@octokit/oauth-app" "^4.0.6"
-    "@octokit/plugin-paginate-rest" "^5.0.0"
+    "@octokit/plugin-paginate-rest" "^6.0.0"
     "@octokit/plugin-rest-endpoint-methods" "^7.0.0"
     "@octokit/plugin-retry" "^4.0.3"
     "@octokit/plugin-throttling" "^5.0.0"
