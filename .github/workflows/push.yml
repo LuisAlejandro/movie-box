@@ -10,7 +10,7 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-20.04
-    if: github.repository == 'LuisAlejandro/movie-box'
+    if: github.repository == 'simonSlamka/movie-box'
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
