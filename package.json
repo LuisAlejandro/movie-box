@@ -18,7 +18,7 @@
     "dist": "webpack"
   },
   "dependencies": {
-    "@octokit/rest": "19.0.7",
+    "@octokit/rest": "19.0.8",
     "axios": "^1.4.0",
     "dotenv": "16.0.3",
     "eastasianwidth": "0.2.0",
