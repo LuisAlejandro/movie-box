@@ -23,7 +23,7 @@
     "dotenv": "16.3.1",
     "eastasianwidth": "0.2.0",
     "gist-box": "0.3.1",
-    "octokit": "2.1.0"
+    "octokit": "3.0.0"
   },
   "devDependencies": {
     "webpack": "5.88.1",
