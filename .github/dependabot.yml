@@ -24,4 +24,4 @@ updates:
   ignore:
   - dependency-name: dockershelf/node
     versions:
-    - "> 14"
+    - "> 18"
