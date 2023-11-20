@@ -81,7 +81,7 @@ jobs:
     needs: approve
     steps:
       - name: Merge
-        uses: actions/github-script@v6
+        uses: actions/github-script@v7
         if: github.actor == 'dependabot[bot]' || github.actor == 'dependabot-preview[bot]'
         with:
           github-token: "${{ secrets.PERSONAL_ACCESS_TOKEN }}"
@@ -92,7 +92,7 @@ jobs:
               pull_number: context.payload.pull_request.number
             })
       - name: Merge
-        uses: actions/github-script@v6
+        uses: actions/github-script@v7
         if: github.actor == 'LuisAlejandro'
         with:
           github-token: "${{ secrets.GITHUB_TOKEN }}"
